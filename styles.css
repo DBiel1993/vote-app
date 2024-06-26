@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.directions {
+    margin: 10px;
+    padding: 8px 12px;
+}
+
+.googleDirectionsBtn {
+    margin: 10px;
+    padding: 8px 12px;
+}
+
+.appleDirectionsBtn {
+    margin: 10px;
+    padding: 8px 12px;
+}
+
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+#optionInput {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#addOptionBtn {
+    padding: 8px 12px;
+    margin: 20px;
+}
+
+.options-section {
+    margin-bottom: 20px;
+}
+
+#optionsList {
+    list-style: none;
+    padding: 0;
+}
+
+#optionsList li {
+    padding: 10px;
+    background: #e4e4e4;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#optionsList li button {
+    padding: 5px 10px;
+}
+
+.results-section {
+    background: #e4e4e4;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#winningOption {
+    font-size: 18px;
+    font-weight: bold;
+   
+}

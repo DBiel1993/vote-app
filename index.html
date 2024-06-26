@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Vote for Your Favorite Option</h1>
+      <div class="input-section">
+        <input
+          type="text"
+          id="optionInput"
+          placeholder="Enter option (address)"
+        />
+        <button id="addOptionBtn">Add Option</button>
+      </div>
+      <div class="options-section">
+        <ul id="optionsList"></ul>
+      </div>
+      <div class="results-section">
+        <h2>Option with the Greatest Votes</h2>
+        <p id="winningOption"></p>
+        <button id="googleDirectionsBtn" class="googleDirectionsBtn">
+          Get Directions (Google Maps)
+        </button>
+
+        <button id="appleDirectionsBtn" class="appleDirectionsBtn">
+          Get Directions (Apple Maps)
+        </button>
+      </div>
+    </div>
+
+    <script src="functions.js"></script>
+  </body>
+</html>
