@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors()); // Enable CORS
 app.use(bodyParser.json());
 
 let sessions = {};
@@ -15,6 +15,7 @@ let sessions = {};
 app.post('/session', (req, res) => {
     const sessionId = uuidv4();
     sessions[sessionId] = { options: [] };
+    console.log(`New session created: ${sessionId}`);
     res.json({ sessionId });
 });
 
@@ -40,6 +41,7 @@ app.post('/options/:sessionId', (req, res) => {
             votes: 0
         };
         session.options.push(newOption);
+        console.log(`New option added to session ${sessionId}: ${newOption.text}`);
         res.json(newOption);
     } else {
         res.status(404).json({ message: 'Session not found' });
@@ -55,6 +57,7 @@ app.post('/vote/:sessionId', (req, res) => {
         const option = session.options.find(opt => opt.id === id);
         if (option) {
             option.votes += 1;
+            console.log(`Vote added to option ${id} in session ${sessionId}`);
             res.json(option);
         } else {
             res.status(404).json({ message: 'Option not found' });
