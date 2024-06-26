@@ -32,7 +32,6 @@ body {
     padding: 8px 12px;
 }
 
-
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -84,5 +83,103 @@ h1 {
 #winningOption {
     font-size: 18px;
     font-weight: bold;
-   
+}
+
+/* Media Queries */
+
+/* For tablets and larger screens */
+@media (min-width: 600px) {
+    .container {
+        width: 500px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #optionInput {
+        width: 75%;
+    }
+
+    #addOptionBtn {
+        padding: 10px 15px;
+        margin: 20px;
+    }
+
+    #optionsList li {
+        padding: 12px;
+    }
+
+    #optionsList li button {
+        padding: 6px 12px;
+    }
+
+    #winningOption {
+        font-size: 20px;
+    }
+}
+
+/* For larger desktops */
+@media (min-width: 1024px) {
+    .container {
+        width: 700px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    #optionInput {
+        width: 80%;
+    }
+
+    #addOptionBtn {
+        padding: 12px 20px;
+        margin: 20px;
+    }
+
+    #optionsList li {
+        padding: 15px;
+    }
+
+    #optionsList li button {
+        padding: 8px 15px;
+    }
+
+    #winningOption {
+        font-size: 24px;
+    }
+}
+
+/* For small devices (phones) */
+@media (max-width: 599px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #optionInput {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #addOptionBtn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #optionsList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #optionsList li button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }

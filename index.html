@@ -9,7 +9,16 @@
   <body>
     <div class="container">
       <h1>Vote for Your Favorite Option</h1>
-      <div class="input-section">
+      <div class="session-section">
+        <input
+          type="text"
+          id="sessionIdInput"
+          placeholder="Enter session ID or leave blank to create new"
+        />
+        <button id="createSessionBtn">Create New Session</button>
+        <button id="joinSessionBtn">Join Session</button>
+      </div>
+      <div class="input-section" style="display: none">
         <input
           type="text"
           id="optionInput"
@@ -21,12 +30,11 @@
         <ul id="optionsList"></ul>
       </div>
       <div class="results-section">
-        <h2>Winning Vote</h2>
+        <h2>Option with the Greatest Votes</h2>
         <p id="winningOption"></p>
         <button id="googleDirectionsBtn" class="googleDirectionsBtn">
           Get Directions (Google Maps)
         </button>
-
         <button id="appleDirectionsBtn" class="appleDirectionsBtn">
           Get Directions (Apple Maps)
         </button>
