@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sessionIdInput = document.getElementById('sessionIdInput');
     const createSessionBtn = document.getElementById('createSessionBtn');
     const joinSessionBtn = document.getElementById('joinSessionBtn');
+    const sessionIdDisplay = document.getElementById('sessionIdDisplay');
     const optionInput = document.getElementById('optionInput');
     const addOptionBtn = document.getElementById('addOptionBtn');
     const optionsList = document.getElementById('optionsList');
@@ -15,18 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSessionId = null;
 
     createSessionBtn.addEventListener('click', async () => {
-        const response = await fetch(`${apiUrl}/session`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await response.json();
-        currentSessionId = data.sessionId;
-        console.log(`Session created: ${currentSessionId}`);
-        alert(`Session created. Your session ID is ${currentSessionId}`);
-        inputSection.style.display = 'block';
-        fetchOptions();
+        try {
+            const response = await fetch(`${apiUrl}/session`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json();
+            currentSessionId = data.sessionId;
+            console.log(`Session created: ${currentSessionId}`);
+            sessionIdDisplay.textContent = `Session ID: ${currentSessionId}`;
+            inputSection.style.display = 'block';
+            fetchOptions();
+        } catch (error) {
+            console.error('Failed to create session:', error);
+            alert('Failed to create session. Please check the console for details.');
+        }
     });
 
     joinSessionBtn.addEventListener('click', () => {
@@ -36,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         console.log(`Joined session: ${currentSessionId}`);
+        sessionIdDisplay.textContent = `Session ID: ${currentSessionId}`;
         inputSection.style.display = 'block';
         fetchOptions();
     });
